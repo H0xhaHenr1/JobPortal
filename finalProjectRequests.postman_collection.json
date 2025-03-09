@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "18ff1bd0-593c-4f71-a971-ddd78c4b10a4",
+		"name": "finalProjectRequests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "42695201"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "AdminGetUsers",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "",
+								"username": ""
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/admin/users"
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "",
+								"username": ""
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/admin/users/{userId}"
+					},
+					"response": []
+				}
+			],
+			"description": "Vendos tek autehntication: basic auth nje user qe eshte admin."
+		},
+		{
+			"name": "Employer",
+			"item": [
+				{
+					"name": "postJob",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "",
+								"username": ""
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Software Engineer\",\r\n    \"description\": \"Develop and maintain web applications using Java and Spring Boot.\",\r\n    \"requirements\": \"3+ years of experience with Java, Boot, and REST APIs.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/employer/jobs"
+					},
+					"response": []
+				},
+				{
+					"name": "getEmployerJobs",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "",
+								"username": ""
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/employer/jobs"
+					},
+					"response": []
+				},
+				{
+					"name": "getJobApplications",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "",
+								"username": ""
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/employer/jobs/{jobId}/applications"
+					},
+					"response": []
+				},
+				{
+					"name": "updateJobApplication",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "",
+								"username": ""
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "resume",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/employer/applications/{applicationId}/status?newStatus={ENUM}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employer",
+								"applications",
+								"{applicationId}",
+								"status"
+							],
+							"query": [
+								{
+									"key": "newStatus",
+									"value": "{ENUM}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addReview",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "",
+								"username": ""
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": \"Pune interesante\",\r\n    \"rating\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/employer/jobs/{jobId}/reviews"
+					},
+					"response": []
+				},
+				{
+					"name": "getReviews",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "",
+								"username": ""
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/employer/jobs/{insertJobId}/reviews"
+					},
+					"response": []
+				}
+			],
+			"description": "Vendos tek autehntication: basic auth nje user qe eshte employer."
+		},
+		{
+			"name": "JobSeeker",
+			"item": [
+				{
+					"name": "applyForJob",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "",
+								"username": ""
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "resumeUrl",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "diplomaUrl",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": "http://localhost:8080/api/jobseeker/jobs/{jobID}/apply"
+					},
+					"response": []
+				},
+				{
+					"name": "getApplications",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "",
+								"username": ""
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/jobseeker/applications"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllJobsWithFilter",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "",
+								"username": ""
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/jobseeker/jobs?page=0&size=10&jobTitle= ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"jobseeker",
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "jobTitle",
+									"value": " "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAlljobs",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "",
+								"username": ""
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/jobseeker/jobs"
+					},
+					"response": []
+				}
+			],
+			"description": "Vendos tek autehntication: basic auth nje user qe eshte JobSeeker."
+		}
+	]
+}
