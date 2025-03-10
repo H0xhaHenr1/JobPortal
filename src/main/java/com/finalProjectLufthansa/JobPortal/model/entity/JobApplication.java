@@ -86,7 +86,6 @@ public class JobApplication {
                 '}';
     }
 
-//        let's go to the controllers and repositories and service classes. Ill recap again the classes we have. User class with relations: an employer can have many jobPostings(OneToMany), an employer can have many reviews(OneToMany), a JobSeeker can have many applications(OneToMany); JobPosting class with relations: A job can be created by one employer, but an employer can create many job(ManyToOne),a job can have only one review with a OneToOne relationship, and a job can have many applications(OneToMany); JobApplication with relations: many applications may go to a job posting(ManyToOne)and review class.
 }
 
 
