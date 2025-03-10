@@ -36,7 +36,6 @@ public class ReviewService {
         this.reviewMapper = reviewMapper;
     }
 
-    // ✅ Add a review for a job (Only the employer who posted the job can do this)
     public Review addReview(Long jobId, Long employerId, ReviewResource reviewResource) {
         Optional<JobPosting> jobPosting = jobPostingRepository.findById(jobId);
 
