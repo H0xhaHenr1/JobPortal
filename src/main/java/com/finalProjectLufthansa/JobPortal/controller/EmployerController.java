@@ -111,7 +111,6 @@ public class EmployerController {
         return ResponseEntity.noContent().build();
     }
 
-    // ✅ ADD Review for a Job
     @PostMapping("/jobs/{jobId}/reviews")
     public ResponseEntity<String> addReview(
             @PathVariable Long jobId,
